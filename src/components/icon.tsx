@@ -1,7 +1,9 @@
-import { icons } from "lucide-react";
 import React from "react";
+import * as icons from "react-icons/pi";
 
-type IconName = keyof typeof icons;
+const iconPrefix = "Pi"
+export type IconName = keyof typeof icons extends `${typeof iconPrefix}${infer Name}` ? Name : never;
+
 type Props = {
   name: IconName;
   onClick?: (e: React.MouseEvent<SVGSVGElement>) => void;
@@ -13,10 +15,10 @@ export const Icon = ({
   onClick,
   className,
 }: Props) => {
-  const LucideIcon = icons[name];
+  const IconComponent = icons[`${iconPrefix}${name}`];
 
   return (
-    <LucideIcon
+    <IconComponent
       onClick={onClick}
       className={className}
     />
