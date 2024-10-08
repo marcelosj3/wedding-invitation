@@ -1,14 +1,20 @@
+import { APIProvider } from '@vis.gl/react-google-maps';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
+import { Toaster } from './provider/toaster';
 import reportWebVitals from './reportWebVitals';
+import { environment } from './utils/environment';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <App />
+    <APIProvider apiKey={environment.GOOGLE_MAPS_API_KEY}>
+      <App />
+      <Toaster />
+    </APIProvider>
   </React.StrictMode>
 );
 
