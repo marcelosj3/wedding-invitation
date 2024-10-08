@@ -1,21 +1,21 @@
-import { APIProvider } from '@vis.gl/react-google-maps';
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './App';
-import { Toaster } from './provider/toaster';
-import reportWebVitals from './reportWebVitals';
-import { environment } from './utils/environment';
+import { APIProvider } from "@vis.gl/react-google-maps";
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App";
+import { Toaster } from "./provider/toaster";
+import reportWebVitals from "./reportWebVitals";
+import { environment } from "./utils/environment";
 
 const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
+	document.getElementById("root") as HTMLElement,
 );
 root.render(
-  <React.StrictMode>
-    <APIProvider apiKey={environment.GOOGLE_MAPS_API_KEY}>
-      <App />
-      <Toaster />
-    </APIProvider>
-  </React.StrictMode>
+	<React.StrictMode>
+		<APIProvider apiKey={environment.GOOGLE_MAPS_API_KEY}>
+			<App />
+			<Toaster />
+		</APIProvider>
+	</React.StrictMode>,
 );
 
 // If you want to start measuring performance in your app, pass a function

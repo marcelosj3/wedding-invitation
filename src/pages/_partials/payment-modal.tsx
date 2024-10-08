@@ -26,9 +26,10 @@ export const PaymentModal = () => {
               navigator.clipboard.writeText(environment.PAYMENT_PIX_KEY);
               toast({
                 title: "Chave Pix copiada",
-                description: "A chave Pix foi copiada para a área de transferência.",
+                description:
+                  "A chave Pix foi copiada para a área de transferência.",
                 variant: "default",
-                duration: 3000
+                duration: 3000,
               });
             }}
           />
