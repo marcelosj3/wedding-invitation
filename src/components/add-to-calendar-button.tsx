@@ -1,4 +1,5 @@
-import React, { useEffect, useRef, useState } from "react";
+import type React from "react";
+import { useEffect, useRef, useState } from "react";
 import { generateAppleCalendarUrl } from "../utils/calendar/generate-apple-calendar-url";
 import { generateGoogleCalendarUrl } from "../utils/calendar/generate-google-calendar-url";
 import { generateOutlookCalendarUrl } from "../utils/calendar/generate-outlook-calendar-url";
@@ -75,7 +76,7 @@ export const AddToCalendarButton: React.FC<AddToCalendarButtonProps> = ({
 	return (
 		<div className="relative" ref={dropdownRef}>
 			{isOpen && (
-				<div className="absolute z-10 w-full bottom-full mb-2 bg-white rounded-md shadow-lg">
+				<div className="absolute bottom-full z-10 mb-2 w-full rounded-md bg-white shadow-lg">
 					<div
 						className="py-1"
 						role="menu"
@@ -84,26 +85,26 @@ export const AddToCalendarButton: React.FC<AddToCalendarButtonProps> = ({
 					>
 						<button
 							onClick={() => handleAddToCalendar("google")}
-							className="flex items-center w-full px-4 py-2 text-sm text-gray-350 hover:bg-gray-100 hover:text-gray-900"
+							className="flex w-full items-center px-4 py-2 text-gray-350 text-sm hover:bg-gray-100 hover:text-gray-900"
 							role="menuitem"
 						>
-							<Icon name="GoogleLogoBold" className="w-5 h-5 mr-2" />
+							<Icon name="GoogleLogoBold" className="mr-2 h-5 w-5" />
 							Google Calendar
 						</button>
 						<button
 							onClick={() => handleAddToCalendar("apple")}
-							className="flex items-center w-full px-4 py-2 text-sm text-gray-350 hover:bg-gray-100 hover:text-gray-900"
+							className="flex w-full items-center px-4 py-2 text-gray-350 text-sm hover:bg-gray-100 hover:text-gray-900"
 							role="menuitem"
 						>
-							<Icon name="AppleLogoFill" className="w-5 h-5 mr-2" />
+							<Icon name="AppleLogoFill" className="mr-2 h-5 w-5" />
 							Apple Calendar
 						</button>
 						<button
 							onClick={() => handleAddToCalendar("outlook")}
-							className="flex items-center w-full px-4 py-2 text-sm text-gray-350 hover:bg-gray-100 hover:text-gray-900"
+							className="flex w-full items-center px-4 py-2 text-gray-350 text-sm hover:bg-gray-100 hover:text-gray-900"
 							role="menuitem"
 						>
-							<Icon name="MicrosoftOutlookLogoFill" className="w-5 h-5 mr-2" />
+							<Icon name="MicrosoftOutlookLogoFill" className="mr-2 h-5 w-5" />
 							Outlook Calendar
 						</button>
 					</div>

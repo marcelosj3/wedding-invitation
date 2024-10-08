@@ -5,9 +5,9 @@ type Props = {
 
 export const BackgroundPattern = ({ children, url }: Props) => {
 	return (
-		<div className="min-h-screen relative overflow-hidden">
+		<div className="relative min-h-screen overflow-hidden">
 			<div
-				className="absolute top-0 left-0 w-full h-full"
+				className="absolute top-0 left-0 h-full w-full"
 				style={{
 					backgroundImage: `url(${url})`,
 					backgroundSize: "auto",

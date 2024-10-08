@@ -11,14 +11,14 @@ import { weddingDetails } from "./wedding-event-details";
 
 export const Home = () => {
 	return (
-		<div className="text-gray-650 font-serif">
+		<div className="font-serif text-gray-650">
 			<BackgroundPattern url={BackgroundPatternUrl}>
-				<div className="max-w-6xl mx-auto px-4 py-8 relative z-10">
-					<header className="text-center mb-8">
-						<h1 className="text-4xl md:text-5xl font-bold mb-2 text-gray-650">
+				<div className="relative z-10 mx-auto max-w-6xl px-4 py-8">
+					<header className="mb-8 text-center">
+						<h1 className="mb-2 font-bold text-4xl text-gray-650 md:text-5xl">
 							Marcelo & Karina
 						</h1>
-						<p className="text-xl md:text-2xl text-gray-650">
+						<p className="text-gray-650 text-xl md:text-2xl">
 							Convidam você para celebrar o nosso casamento
 						</p>
 						<div className="flex items-center justify-center">
@@ -26,13 +26,13 @@ export const Home = () => {
 						</div>
 					</header>
 
-					<section className="grid md:grid-cols-2 gap-4">
+					<section className="grid gap-4 md:grid-cols-2">
 						{weddingDetails.events.map((details) => (
 							<PlaceCard key={details.cardTitle} details={details} />
 						))}
 
 						<Card title="Confirme sua presença" backgroundImageHref={Rings}>
-							<div className="flex-1 flex flex-col justify-between gap-2">
+							<div className="flex flex-1 flex-col justify-between gap-2">
 								<p className="text-gray-200">
 									Sua presença é muito importante para nós! Por favor, confirme
 									até 01 de Novembro para que possamos preparar tudo com
@@ -51,7 +51,7 @@ export const Home = () => {
 						</Card>
 
 						<Card title="Presente" backgroundImageHref={GiftBox}>
-							<div className="flex-1 flex flex-col justify-between gap-2">
+							<div className="flex flex-1 flex-col justify-between gap-2">
 								<p className="text-gray-200">
 									Sua presença é o nosso maior presente! Mas se desejar nos
 									ajudar com nossa lua de mel, ficaremos muito gratos. Qualquer

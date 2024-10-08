@@ -19,5 +19,5 @@ export const formatISODate = (
 		.replace(/[-:]/g, "")
 		.replace(" ", "T");
 
-	return formattedDate + "Z";
+	return `${formattedDate}Z`;
 };

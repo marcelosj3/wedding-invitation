@@ -6,19 +6,19 @@ type Props = {
 
 export const Card = ({ title, children, backgroundImageHref }: Props) => {
 	return (
-		<div className="bg-green-350 rounded-md relative overflow-hidden">
+		<div className="relative overflow-hidden rounded-md bg-green-350">
 			{backgroundImageHref && (
-				<div className="absolute z-10 -right-12 -top-4 pointer-events-none h-full">
+				<div className="-right-12 -top-4 pointer-events-none absolute z-10 h-full">
 					<img
 						src={backgroundImageHref}
 						alt={title}
-						className="w-full opacity-20 h-full"
+						className="h-full w-full opacity-20"
 					/>
 				</div>
 			)}
 
-			<section className="flex flex-col p-2 bg-green-350 rounded-md gap-2 opacity-100 h-full z-20">
-				<h2 className="text-2xl font-bold mb-2 text-gray-200">{title}</h2>
+			<section className="z-20 flex h-full flex-col gap-2 rounded-md bg-green-350 p-2 opacity-100">
+				<h2 className="mb-2 font-bold text-2xl text-gray-200">{title}</h2>
 				{children}
 			</section>
 		</div>

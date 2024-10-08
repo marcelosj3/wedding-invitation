@@ -1,6 +1,6 @@
-import React from "react";
+import type React from "react";
 import { cn } from "../utils/style/cn";
-import { Icon, IconName } from "./icon";
+import { Icon, type IconName } from "./icon";
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 	href?: string;
@@ -27,7 +27,7 @@ export const Button: React.FC<ButtonProps> = ({
 	};
 
 	const baseClassName = cn(
-		"inline-flex items-center justify-center text-white rounded-md transition-colors duration-300",
+		"inline-flex items-center justify-center rounded-md text-white transition-colors duration-300",
 		sizeClasses[size],
 		"bg-green-800 hover:bg-green-600",
 		className,

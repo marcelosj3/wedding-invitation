@@ -48,7 +48,7 @@ export const PlaceCard = ({ details }: Props) => {
 				</p>
 			</div>
 
-			<div className="w-full h-[175px] bg-gray-300 rounded-md">
+			<div className="h-[175px] w-full rounded-md bg-gray-300">
 				<Map
 					defaultCenter={{
 						lat: details.venue.latitude,
