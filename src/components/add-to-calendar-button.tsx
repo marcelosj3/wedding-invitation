@@ -50,27 +50,30 @@ export const AddToCalendarButton: React.FC<AddToCalendarButtonProps> = ({
 		calendarType: "google" | "apple" | "outlook",
 	) => {
 		const calendarUrlArgs = {
-			startDate: new Date(`${startDate}T${startTime}Z`),
-			endDate: new Date(`${endDate}T${endTime}Z`),
+			startDate: `${startDate}T${startTime}:00${timeZone}`,
+			endDate: `${endDate}T${endTime}:00${timeZone}`,
 			name,
 			location,
 			description,
 		};
 
-		let url;
-		switch (calendarType) {
-			case "google":
-				url = generateGoogleCalendarUrl(calendarUrlArgs);
-				break;
-			case "apple":
-				url = generateAppleCalendarUrl(calendarUrlArgs);
-				break;
-			case "outlook":
-				url = generateOutlookCalendarUrl(calendarUrlArgs);
-				break;
+		const generateUrl = {
+			google: generateGoogleCalendarUrl,
+			apple: generateAppleCalendarUrl,
+			outlook: generateOutlookCalendarUrl,
+		};
+
+		try {
+			const url = generateUrl[calendarType](calendarUrlArgs);
+			if (url) {
+				window.open(url, "_blank", "noopener,noreferrer");
+				setIsOpen(false);
+			} else {
+				console.error(`Failed to generate URL for ${calendarType} calendar`);
+			}
+		} catch (error) {
+			console.error(`Error generating URL for ${calendarType} calendar:`, error);
 		}
-		window.open(url, "_blank");
-		setIsOpen(false);
 	};
 
 	return (
@@ -85,24 +88,30 @@ export const AddToCalendarButton: React.FC<AddToCalendarButtonProps> = ({
 					>
 						<button
 							onClick={() => handleAddToCalendar("google")}
+							onTouchStart={() => handleAddToCalendar("google")}
 							className="flex w-full items-center px-4 py-2 text-gray-350 text-sm hover:bg-gray-100 hover:text-gray-900"
 							role="menuitem"
+							type="button"
 						>
 							<Icon name="GoogleLogoBold" className="mr-2 h-5 w-5" />
 							Google Calendar
 						</button>
 						<button
 							onClick={() => handleAddToCalendar("apple")}
+							onTouchStart={() => handleAddToCalendar("apple")}
 							className="flex w-full items-center px-4 py-2 text-gray-350 text-sm hover:bg-gray-100 hover:text-gray-900"
 							role="menuitem"
+							type="button"
 						>
 							<Icon name="AppleLogoFill" className="mr-2 h-5 w-5" />
 							Apple Calendar
 						</button>
 						<button
 							onClick={() => handleAddToCalendar("outlook")}
+							onTouchStart={() => handleAddToCalendar("outlook")}
 							className="flex w-full items-center px-4 py-2 text-gray-350 text-sm hover:bg-gray-100 hover:text-gray-900"
 							role="menuitem"
+							type="button"
 						>
 							<Icon name="MicrosoftOutlookLogoFill" className="mr-2 h-5 w-5" />
 							Outlook Calendar
