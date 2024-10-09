@@ -6,6 +6,11 @@ type Args = {
 	description: string;
 };
 
+const formatDateForGoogleCalendar = (dateStr: string) => {
+	const date = new Date(dateStr);
+	return `${date.toISOString().replace(/[-:.]/g, "").slice(0, 15)}Z`;
+};
+
 export const generateGoogleCalendarUrl = ({
 	startDate,
 	endDate,
@@ -17,8 +22,8 @@ export const generateGoogleCalendarUrl = ({
 	const encodedLocation = encodeURIComponent(location);
 	const encodedDescription = encodeURIComponent(description);
 
-	const formattedStartDate = startDate.replace(/:/g, '');
-	const formattedEndDate = endDate.replace(/:/g, '');
+	const formattedStartDate = formatDateForGoogleCalendar(startDate);
+	const formattedEndDate = formatDateForGoogleCalendar(endDate);
 
 	return `https://www.google.com/calendar/render?action=TEMPLATE&text=${encodedName}&dates=${formattedStartDate}/${formattedEndDate}&location=${encodedLocation}&details=${encodedDescription}`;
 };

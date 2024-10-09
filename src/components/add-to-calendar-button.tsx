@@ -10,8 +10,6 @@ interface AddToCalendarButtonProps {
 	name: string;
 	startDate: string;
 	endDate: string;
-	startTime: string;
-	endTime: string;
 	timeZone: string;
 	location: string;
 	description: string;
@@ -21,8 +19,6 @@ export const AddToCalendarButton: React.FC<AddToCalendarButtonProps> = ({
 	name,
 	startDate,
 	endDate,
-	startTime,
-	endTime,
 	timeZone,
 	location,
 	description,
@@ -50,8 +46,8 @@ export const AddToCalendarButton: React.FC<AddToCalendarButtonProps> = ({
 		calendarType: "google" | "apple" | "outlook",
 	) => {
 		const calendarUrlArgs = {
-			startDate: `${startDate}T${startTime}:00${timeZone}`,
-			endDate: `${endDate}T${endTime}:00${timeZone}`,
+			startDate,
+			endDate,
 			name,
 			location,
 			description,
@@ -72,7 +68,10 @@ export const AddToCalendarButton: React.FC<AddToCalendarButtonProps> = ({
 				console.error(`Failed to generate URL for ${calendarType} calendar`);
 			}
 		} catch (error) {
-			console.error(`Error generating URL for ${calendarType} calendar:`, error);
+			console.error(
+				`Error generating URL for ${calendarType} calendar:`,
+				error,
+			);
 		}
 	};
 

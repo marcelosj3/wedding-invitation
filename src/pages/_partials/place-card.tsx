@@ -1,9 +1,8 @@
-import { Map, Marker } from "@vis.gl/react-google-maps";
+import { Map as GoogleMap, Marker } from "@vis.gl/react-google-maps";
 import { AddToCalendarButton } from "../../components/add-to-calendar-button";
 import { Card } from "../../components/card";
 import { Icon } from "../../components/icon";
 import { formatDate } from "../../utils/date/format-date";
-import { formatDateTime } from "../../utils/date/format-date-time";
 import { formatTime } from "../../utils/date/format-time";
 
 type Props = {
@@ -17,8 +16,8 @@ type Props = {
 			longitude: number;
 		};
 		eventSchedule: {
-			startDate: Date;
-			endDate: Date;
+			startDate: string;
+			endDate: string;
 			description: string;
 		};
 	};
@@ -38,7 +37,7 @@ export const PlaceCard = ({ details }: Props) => {
 			<div className="flex items-center">
 				<Icon name="CalendarBold" className="mr-2 text-gray-200" />
 				<p className="text-gray-200">
-					{formatDate(details.eventSchedule.startDate)}
+					{formatDate(new Date(details.eventSchedule.startDate))}
 				</p>
 			</div>
 			<div className="flex items-center">
@@ -49,7 +48,7 @@ export const PlaceCard = ({ details }: Props) => {
 			</div>
 
 			<div className="h-[175px] w-full rounded-md bg-gray-300">
-				<Map
+				<GoogleMap
 					defaultCenter={{
 						lat: details.venue.latitude,
 						lng: details.venue.longitude,
@@ -66,15 +65,13 @@ export const PlaceCard = ({ details }: Props) => {
 							window.open(url, "_blank");
 						}}
 					/>
-				</Map>
+				</GoogleMap>
 			</div>
 
 			<AddToCalendarButton
 				name={`Karina e Marcelo - ${details.venue.name} - ${details.cardTitle}`}
-				startDate={formatDateTime(details.eventSchedule.startDate)}
-				endDate={formatDateTime(details.eventSchedule.endDate)}
-				startTime={formatTime(details.eventSchedule.startDate)}
-				endTime={formatTime(details.eventSchedule.endDate)}
+				startDate={details.eventSchedule.startDate}
+				endDate={details.eventSchedule.endDate}
 				timeZone="America/Sao_Paulo"
 				location={details.venue.address}
 				description={details.eventSchedule.description}

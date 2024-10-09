@@ -1,5 +1,5 @@
 export const formatDate = (
-	date: Date,
+	date: Date | string,
 	options?: Intl.DateTimeFormatOptions,
 ) => {
 	const defaultOptions: Intl.DateTimeFormatOptions = {
@@ -11,5 +11,7 @@ export const formatDate = (
 
 	const mergedOptions = { ...defaultOptions, ...options };
 
-	return new Intl.DateTimeFormat("pt-BR", mergedOptions).format(date);
+	const dateToFormat = typeof date === "string" ? new Date(date) : date;
+
+	return new Intl.DateTimeFormat("pt-BR", mergedOptions).format(dateToFormat);
 };

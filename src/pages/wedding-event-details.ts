@@ -13,10 +13,10 @@ const weddingCeremonyDetails = {
 		longitude: -49.10931434473627,
 	},
 	eventSchedule: {
-		startDate: new Date("2024-11-09T15:00:00-03:00"),
-		endDate: new Date("2024-11-09T18:00:00-03:00"),
+		startDate: "2024-11-09T15:00:00-03:00",
+		endDate: "2024-11-09T18:00:00-03:00",
 		description:
-			"Junte-se a nós para celebrar a cerimônia de casamento de Marcelo e Karina! Local: Comunidade São Luís Gonzaga. Sua presença tornará este momento ainda mais especial.",
+			"Junte-se a nós para celebrar a cerimônia de casamento de Marcelo e Karina! Sua presença tornará este momento ainda mais especial.",
 	},
 };
 
@@ -31,10 +31,10 @@ const weddingReceptionDetails = {
 		longitude: -49.092995129396556,
 	},
 	eventSchedule: {
-		startDate: new Date("2024-11-09T19:00:00-03:00"),
-		endDate: new Date("2024-11-10T05:00:00-03:00"),
+		startDate: "2024-11-09T19:00:00-03:00",
+		endDate: "2024-11-10T05:00:00-03:00",
 		description:
-			"Junte-se a nós para celebrar a recepção de casamento de Marcelo e Karina! Local: Sociedade Desportos Acaraí. Sua presença tornará este momento ainda mais especial.",
+			"Junte-se a nós para celebrar a recepção de casamento de Marcelo e Karina! Sua presença tornará este momento ainda mais especial.",
 	},
 };
 
