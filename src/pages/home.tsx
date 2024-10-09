@@ -31,16 +31,15 @@ export const Home = () => {
 							<PlaceCard key={details.cardTitle} details={details} />
 						))}
 
-						<Card title="Confirme sua presença" backgroundImageHref={Rings}>
+						<Card title="Confirmação de Presença" backgroundImageHref={Rings}>
 							<div className="flex flex-1 flex-col justify-between gap-2">
-								<p className="text-gray-200">
-									Sua presença é muito importante para nós! Por favor, confirme
-									até 01 de Novembro para que possamos preparar tudo com
-									carinho.
+								<p className="text-gray-900">
+									Estamos animados para celebrar este dia especial com você! Por
+									favor, confirme sua presença até 01 de Novembro para que
+									possamos organizar tudo com muito carinho.
 								</p>
-
 								<Button
-									buttonText="Confirmar presença"
+									buttonText="Confirmar Presença"
 									iconName="WhatsappLogoBold"
 									className="w-full"
 									onClick={() =>
@@ -49,15 +48,14 @@ export const Home = () => {
 								/>
 							</div>
 						</Card>
-
-						<Card title="Presente" backgroundImageHref={GiftBox}>
+						<Card title="Presentes" backgroundImageHref={GiftBox}>
 							<div className="flex flex-1 flex-col justify-between gap-2">
-								<p className="text-gray-200">
-									Sua presença é o nosso maior presente! Mas se desejar nos
-									ajudar com nossa lua de mel, ficaremos muito gratos. Qualquer
-									contribuição é opcional e bem-vinda.
+								<p className="text-gray-900">
+									É uma alegria compartilhar este momento especial com você! Sua
+									presença é o que mais importa para nós, mas se desejar nos
+									surpreender com um presente, uma contribuição via PIX será
+									muito bem-vinda.
 								</p>
-
 								<PaymentModal />
 							</div>
 						</Card>

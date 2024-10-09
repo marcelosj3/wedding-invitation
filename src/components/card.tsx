@@ -18,7 +18,7 @@ export const Card = ({ title, children, backgroundImageHref }: Props) => {
 			)}
 
 			<section className="z-20 flex h-full flex-col gap-2 rounded-md bg-green-350 p-2 opacity-100">
-				<h2 className="mb-2 font-bold text-2xl text-gray-200">{title}</h2>
+				<h2 className="mb-2 font-bold text-2x text-gray-900">{title}</h2>
 				{children}
 			</section>
 		</div>

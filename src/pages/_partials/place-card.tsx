@@ -31,18 +31,18 @@ export const PlaceCard = ({ details }: Props) => {
 			backgroundImageHref={details.cardBackgroundImageHref}
 		>
 			<div className="flex items-center">
-				<Icon name="MapPinAreaBold" className="mr-2 text-gray-200" />
-				<p className="text-gray-200">{details.venue.name}</p>
+				<Icon name="MapPinAreaBold" className="mr-2 text-gray-900" />
+				<p className="text-gray-900">{details.venue.name}</p>
 			</div>
 			<div className="flex items-center">
-				<Icon name="CalendarBold" className="mr-2 text-gray-200" />
-				<p className="text-gray-200">
+				<Icon name="CalendarBold" className="mr-2 text-gray-900" />
+				<p className="text-gray-900">
 					{formatDate(new Date(details.eventSchedule.startDate))}
 				</p>
 			</div>
 			<div className="flex items-center">
-				<Icon name="ClockBold" className="mr-2 text-gray-200" />
-				<p className="text-gray-200">
+				<Icon name="ClockBold" className="mr-2 text-gray-900" />
+				<p className="text-gray-900">
 					{formatTime(details.eventSchedule.startDate)}
 				</p>
 			</div>
