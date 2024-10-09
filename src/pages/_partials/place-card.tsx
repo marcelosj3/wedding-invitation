@@ -54,15 +54,15 @@ export const PlaceCard = ({ details }: Props) => {
 						lng: details.venue.longitude,
 					}}
 					defaultZoom={15}
+					onClick={() => {
+						const url = `https://www.google.com/maps/search/?api=1&query=${details.venue.latitude},${details.venue.longitude}`;
+						window.open(url, "_blank");
+					}}
 				>
 					<Marker
 						position={{
 							lat: details.venue.latitude,
 							lng: details.venue.longitude,
-						}}
-						onClick={() => {
-							const url = `https://www.google.com/maps/search/?api=1&query=${details.venue.latitude},${details.venue.longitude}`;
-							window.open(url, "_blank");
 						}}
 					/>
 				</GoogleMap>
