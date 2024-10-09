@@ -24,6 +24,11 @@ type Props = {
 };
 
 export const PlaceCard = ({ details }: Props) => {
+	const openMapRouteOnClick = () => {
+		const url = `https://www.google.com/maps/search/?api=1&query=${details.venue.latitude},${details.venue.longitude}`;
+		window.open(url, "_blank");
+	};
+
 	return (
 		<Card
 			key={details.cardTitle}
@@ -54,16 +59,14 @@ export const PlaceCard = ({ details }: Props) => {
 						lng: details.venue.longitude,
 					}}
 					defaultZoom={15}
-					onClick={() => {
-						const url = `https://www.google.com/maps/search/?api=1&query=${details.venue.latitude},${details.venue.longitude}`;
-						window.open(url, "_blank");
-					}}
+					onClick={openMapRouteOnClick}
 				>
 					<Marker
 						position={{
 							lat: details.venue.latitude,
 							lng: details.venue.longitude,
 						}}
+						onClick={openMapRouteOnClick}
 					/>
 				</GoogleMap>
 			</div>
