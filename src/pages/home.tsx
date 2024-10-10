@@ -49,13 +49,13 @@ export const Home = () => {
 								</Button>
 							</div>
 						</Card>
-						<Card title="Presentes" backgroundImageHref={GiftBox}>
+						<Card title="Sugestão de Presente" backgroundImageHref={GiftBox}>
 							<div className="flex flex-1 flex-col justify-between gap-2">
 								<p className="text-gray-900">
 									É uma alegria compartilhar este momento especial com você! Sua
 									presença é o que mais importa para nós, mas se desejar nos
-									surpreender com um presente, uma contribuição via PIX será
-									muito bem-vinda.
+									surpreender com um presente, um gesto via PIX será muito
+									bem-vindo.
 								</p>
 								<PaymentModal />
 							</div>
