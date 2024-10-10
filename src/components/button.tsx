@@ -5,7 +5,6 @@ import { Icon, type IconName } from "./icon";
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 	href?: string;
 	onClick?: () => void;
-	buttonText: string;
 	className?: string;
 	size?: "sm" | "md" | "lg";
 	iconName?: IconName;
@@ -14,10 +13,10 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 export const Button: React.FC<ButtonProps> = ({
 	href,
 	onClick,
-	buttonText,
 	className,
 	size = "md",
 	iconName,
+	children,
 	...props
 }) => {
 	const sizeClasses = {
@@ -36,7 +35,7 @@ export const Button: React.FC<ButtonProps> = ({
 	const content = (
 		<>
 			{iconName && <Icon name={iconName} className="mr-2" />}
-			{buttonText}
+			{children}
 		</>
 	);
 
