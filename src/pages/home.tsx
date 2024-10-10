@@ -39,13 +39,14 @@ export const Home = () => {
 									possamos organizar tudo com muito carinho.
 								</p>
 								<Button
-									buttonText="Confirmar Presença"
 									iconName="WhatsappLogoBold"
 									className="w-full"
 									onClick={() =>
 										window.open(weddingDetails.whatsapp.groupLink, "_blank")
 									}
-								/>
+								>
+									Confirmar Presença
+								</Button>
 							</div>
 						</Card>
 						<Card title="Presentes" backgroundImageHref={GiftBox}>

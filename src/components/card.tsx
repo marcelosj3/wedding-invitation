@@ -12,7 +12,7 @@ export const Card = ({ title, children, backgroundImageHref }: Props) => {
 					<img
 						src={backgroundImageHref}
 						alt={title}
-						className="h-full w-full opacity-20"
+						className="h-full w-full opacity-15"
 					/>
 				</div>
 			)}

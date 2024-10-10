@@ -1,9 +1,9 @@
 import { Map as GoogleMap, Marker } from "@vis.gl/react-google-maps";
-import { AddToCalendarButton } from "../../components/add-to-calendar-button";
 import { Card } from "../../components/card";
 import { Icon } from "../../components/icon";
 import { formatDate } from "../../utils/date/format-date";
 import { formatTime } from "../../utils/date/format-time";
+import { AddToCalendarButtonsContainer } from "./add-to-calendar-buttons-container";
 
 type Props = {
 	details: {
@@ -71,11 +71,10 @@ export const PlaceCard = ({ details }: Props) => {
 				</GoogleMap>
 			</div>
 
-			<AddToCalendarButton
+			<AddToCalendarButtonsContainer
 				name={`Karina e Marcelo - ${details.venue.name} - ${details.cardTitle}`}
 				startDate={details.eventSchedule.startDate}
 				endDate={details.eventSchedule.endDate}
-				timeZone="America/Sao_Paulo"
 				location={details.venue.address}
 				description={details.eventSchedule.description}
 			/>

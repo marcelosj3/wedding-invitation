@@ -20,7 +20,6 @@ export const PaymentModal = () => {
 					</div>
 
 					<Button
-						buttonText="Copiar chave Pix"
 						className="mb-4"
 						onClick={() => {
 							navigator.clipboard.writeText(environment.PAYMENT_PIX_KEY);
@@ -32,7 +31,9 @@ export const PaymentModal = () => {
 								duration: 3000,
 							});
 						}}
-					/>
+					>
+						Copiar chave Pix
+					</Button>
 
 					<div className="flex w-full max-w-sm flex-col items-start">
 						<div className="mb-2 flex w-full justify-between">
@@ -61,10 +62,11 @@ export const PaymentModal = () => {
 
 			<Button
 				onClick={() => setIsOpen(true)}
-				buttonText="Presentear"
 				className="w-full"
 				iconName="GiftBold"
-			/>
+			>
+				Presentear
+			</Button>
 		</>
 	);
 };
