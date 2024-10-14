@@ -31,7 +31,7 @@ const weddingReceptionDetails = {
 		longitude: -49.092995129396556,
 	},
 	eventSchedule: {
-		startDate: "2024-11-09T19:00:00-03:00",
+		startDate: "2024-11-09T19:45:00-03:00",
 		endDate: "2024-11-10T05:00:00-03:00",
 		description:
 			"Junte-se a nós para celebrar a recepção de casamento de Marcelo e Karina! Sua presença tornará este momento ainda mais especial.",
