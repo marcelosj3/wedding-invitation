@@ -4,10 +4,66 @@ import { Button } from "../../components/button";
 import { Modal } from "../../components/modal";
 import { useToast } from "../../hooks/use-toast";
 import { environment } from "../../utils/environment";
+import { PaymentModalCopyRow } from "./payment-modal-copy-row";
 
 export const PaymentModal = () => {
 	const [isOpen, setIsOpen] = useState(false);
 	const { toast } = useToast();
+
+	const paymentDetails = [
+		{
+			title: "Chave Pix",
+			value: environment.PAYMENT_PIX_KEY,
+			toastInfo: {
+				title: "Chave Pix copiada",
+				description: "A chave Pix foi copiada para a área de transferência.",
+			},
+		},
+		{
+			title: "Nome",
+			value: environment.PAYMENT_NAME,
+			toastInfo: {
+				title: "Nome copiado",
+				description: "O nome foi copiado para a área de transferência.",
+			},
+		},
+		{
+			title: "Banco",
+			value: environment.PAYMENT_BANK_NAME,
+			toastInfo: {
+				title: "Nome do banco copiado",
+				description:
+					"O nome do banco foi copiado para a área de transferência.",
+			},
+		},
+		{
+			title: "Código",
+			value: environment.PAYMENT_BANK_CODE,
+			toastInfo: {
+				title: "Código do banco copiado",
+				description:
+					"O código do banco foi copiado para a área de transferência.",
+			},
+		},
+		{
+			title: "Agência",
+			value: environment.PAYMENT_AGENCY,
+			toastInfo: {
+				title: "Número da agência copiado",
+				description:
+					"O número da agência foi copiado para a área de transferência.",
+			},
+		},
+		{
+			title: "Conta",
+			value: environment.PAYMENT_ACCOUNT,
+			toastInfo: {
+				title: "Número da conta copiado",
+				description:
+					"O número da conta foi copiado para a área de transferência.",
+			},
+		},
+	];
 
 	return (
 		<>
@@ -36,26 +92,9 @@ export const PaymentModal = () => {
 					</Button>
 
 					<div className="flex w-full max-w-sm flex-col items-start">
-						<div className="mb-2 flex w-full justify-between">
-							<span className="font-semibold">Chave Pix:</span>
-							<span id="copy-alias">{environment.PAYMENT_PIX_KEY}</span>
-						</div>
-						<div className="mb-2 flex w-full justify-between">
-							<span className="font-semibold">Nome:</span>
-							<span>{environment.PAYMENT_NAME}</span>
-						</div>
-						<div className="mb-2 flex w-full justify-between">
-							<span className="font-semibold">Banco:</span>
-							<span>{environment.PAYMENT_BANK_NAME}</span>
-						</div>
-						<div className="mb-2 flex w-full justify-between">
-							<span className="font-semibold">Agência:</span>
-							<span>{environment.PAYMENT_AGENCY}</span>
-						</div>
-						<div className="mb-2 flex w-full justify-between">
-							<span className="font-semibold">Conta:</span>
-							<span>{environment.PAYMENT_ACCOUNT}</span>
-						</div>
+						{paymentDetails.map((detail) => (
+							<PaymentModalCopyRow key={detail.title} {...detail} />
+						))}
 					</div>
 				</div>
 			</Modal>
