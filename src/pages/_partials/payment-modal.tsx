@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { default as PixQRCode } from "../../assets/pix-qr-code.png";
+import { PixQRCode } from "../../assets";
 import { Button } from "../../components/button";
 import { Modal } from "../../components/modal";
 import { useToast } from "../../hooks/use-toast";
